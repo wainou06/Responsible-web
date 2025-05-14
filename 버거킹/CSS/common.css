@@ -1,0 +1,338 @@
+@charset "uft-8";
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic+Coding&display=swap');
+
+/* common.css => 모든 html 페이지에 공통으로 적용되는 css */
+/* reset.css 삽입 */
+@import url('./reset.css');
+
+/* 공통 버튼 디자인 */
+.button--shape-red {
+   background-color: #e91b1b;
+   border: none;
+   color: white;
+   padding: 12px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   cursor: pointer;
+}
+
+.button--shape-beige {
+   background-color: transparent;
+   border: 1px solid rgb(122, 122, 98);
+   color: white;
+   padding: 9px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   cursor: pointer;
+}
+
+.button--shape-white {
+   background-color: #ffffff;
+   border: none;
+   color: black;
+   padding: 5px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   cursor: pointer;
+}
+
+.font--gothic {
+   font-family: 'Nanum Gothic Coding', monospace, sans-serif;
+}
+
+.font--jua {
+   font-family: 'Jua', sans-serif;
+}
+
+/* 보통 header와 footer */
+
+/* 헤더 */
+
+nav {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: white;
+   z-index: 9997;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   width: 100%;
+}
+
+.nav-container {
+   height: 100px;
+   /* width: 100%; */
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+}
+
+.logo {
+   /* body 기준 */
+   position: absolute;
+   /* 수평상에서 정가운데 오는 공식 */
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.logo img {
+   width: 60px;
+}
+
+#toggle-menu {
+   display: none;
+}
+
+.menu-toggle-label {
+   display: flex;
+   flex-direction: column;
+   cursor: pointer;
+   z-index: 9998;
+}
+
+.menu-toggle-label span {
+   /* span 태그의 부모요소가 flex이므로
+   인라인 태그인 span 태그에 width, height, margin 적용 가능
+   => 부모요소가 flex면 블록태그나 인라인블록 태그로 바꾸지 않아도 된다. */
+   height: 3px;
+   width: 25px;
+   background: #000;
+   margin: 4px 0;
+}
+
+.menu {
+   display: none;
+   flex-direction: column;
+   background-color: white;
+   width: 100%;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   border-top: 1px solid #ccc;
+   z-index: 9997;
+}
+
+/* 햄버거 버튼을 클릭(체크)했을때 ul메뉴를 보여준다 */
+#toggle-menu:checked + .menu-toggle-label + .menu {
+   display: flex;
+}
+
+.menu > li {
+   border-top: 1px solid #eee;
+   position: relative;
+   font-size: 1.3rem;
+}
+
+.menu > li > a {
+   display: block;
+   padding: 15px 20px;
+   color: black;
+   font-weight: bold;
+}
+
+.menu > li > a::after {
+   content: ' \25BC'; /* 유니코드 */
+   font-size: 10px;
+   margin-left: 4px;
+}
+
+.menu a:hover {
+   color: #e4002b;
+}
+
+.submenu {
+   display: none;
+   background-color: #f5f5f5;
+}
+
+.submenu li a {
+   display: block;
+   padding: 10px 15px;
+   color: #333;
+}
+
+.submenu li a:hover {
+   background-color: #eee;
+}
+
+.menu > li:hover .submenu {
+   display: block;
+}
+
+.delivery-btn {
+   background-color: #e4002b;
+   color: white;
+   padding: 10px 16px;
+   border-radius: 20px;
+   font-weight: bold;
+   text-decoration: none;
+   font-size: 0.9rem;
+   margin-top: 10px;
+}
+
+/* 푸터 */
+.footer {
+   height: 350px;
+   background-color: #2b0200;
+   color: rgb(236, 229, 203);
+}
+
+.footer__level1 {
+   display: none;
+}
+
+.footer__level1 > ul.sitemap {
+   display: flex;
+   justify-content: space-between;
+   max-width: 1140px;
+   margin: 0 auto;
+   padding: 35px 30px;
+   border-bottom: 1px solid;
+}
+
+.footer__level1 ul.sitemap__list > li {
+   padding: 8px 0;
+   font-size: 0.9rem;
+}
+
+.footer__level1 > ul.sitemap a.top {
+   font-size: 1.5rem;
+   display: inline-block;
+   margin-bottom: 15px;
+   color: white;
+}
+
+.footer__level1 ul.sitemap__list > li > a {
+   color: rgb(236, 229, 203);
+   font-weight: bold;
+   font-family: 'Nanum Gothic Coding', monospace, sans-serif;
+}
+
+.footer__level2 > div {
+   max-width: 1140px;
+   display: flex;
+   flex-direction: column;
+}
+
+.footer__level2 ul {
+   display: flex;
+   padding: 30px 20px;
+   justify-content: space-between;
+}
+
+.footer__level2 .button-1ine {
+   text-align: right;
+   padding-right: 20px;
+}
+
+.footer__level2 .button-1ine > button {
+   border-radius: 35px;
+   margin-top: 15px;
+   font-size: 0.8rem;
+}
+
+.footer__level2 .address-line {
+   padding: 50px 10px 0;
+}
+
+.footer__level2 .address-line > * {
+   text-align: left;
+   font-size: 0.8rem;
+}
+
+.footer__level2 .address-line > h2 {
+   padding-bottom: 20px;
+}
+
+.footer__level2 .address-line > div {
+   padding-top: 20px;
+}
+
+.footer__level2 .private-line li {
+   font-size: 0.9rem;
+}
+
+/* 767px 이상 */
+@media all and (min-width: 767px) {
+   .nav-container {
+      flex-direction: row;
+   }
+
+   .logo {
+      position: static;
+      transform: none; /* 트랜스폼 해제 */
+   }
+
+   .menu-toggle-label {
+      display: none; /* 햄버거 메뉴 숨김 */
+   }
+
+   .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: static;
+      flex: 1;
+      border: none;
+   }
+
+   .menu li {
+      border: none;
+   }
+
+   .menu > li {
+      position: relative;
+   }
+
+   .submenu {
+      position: absolute;
+      top: 53px;
+      left: 0;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-width: 150px;
+   }
+
+   .menu li:hover .submenu {
+      display: block;
+   }
+
+   .delivery-btn {
+      margin-top: 0;
+      font-size: 1.2rem;
+   }
+
+   .footer {
+      height: 680px;
+   }
+
+   .footer__level1 {
+      display: block;
+   }
+
+   .footer__level2 > div {
+      max-width: 1140px;
+      margin: 60px auto 0;
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 0 30px;
+   }
+
+   .footer__level2 > div > .private-line {
+      width: 30%;
+   }
+
+   .footer__level2 > div > .address-line {
+      width: 70%;
+      padding: 0;
+   }
+}

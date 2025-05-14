@@ -1,0 +1,334 @@
+@charset "uft-8";
+
+/* index.html 페이지만 적용되는 CSS */
+
+/* 
+    0 ~ 766px
+    디폴트 CSS 속성
+*/
+
+.wrap {
+   background-color: beige;
+   max-width: 1440px;
+   margin: 0 auto;
+}
+
+section .con {
+   height: 100%;
+}
+
+.slider {
+   height: 480px;
+   background: cadetblue;
+}
+
+.slider__content .carousel {
+   height: 480px;
+}
+
+.slider__content .carousel-item.slide1 {
+   background: url('../images/slide1_S.png');
+   background-position: center;
+   background-size: cover;
+   height: 480px;
+}
+
+.slider__content .carousel-item.slide2 {
+   background: url('../images/slide2_S.png');
+   background-position: center;
+   background-size: cover;
+   height: 480px;
+}
+
+.slider__content .carousel-item.slide3 {
+   background: url('../images/slide3_S.png');
+   background-position: center;
+   background-size: cover;
+   height: 480px;
+}
+
+.youtube {
+   height: 605px;
+}
+
+.youtube__content {
+   background-color: darkblue;
+}
+
+.sns {
+   height: 160px;
+}
+
+.sns__content {
+   background: #683a2f;
+}
+
+.sns__content > .content__list {
+   display: flex;
+   height: 100%;
+}
+
+.sns__content > .content__list > li {
+   flex: 1;
+   text-align: center;
+}
+
+.sns__content > .content__list > li > a {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   color: white;
+}
+
+.sns__content > .content__list > li .icon {
+   font-size: 3rem;
+}
+
+.sns__content > .content__list > li .icon > .fab {
+   color: white;
+}
+
+.sns__content > .content__list > li .sns-txt {
+   text-align: center;
+}
+
+.sns__content > .content__list > li .sns-txt > span:nth-of-type(2) {
+   border-radius: 5px;
+   margin-top: 10px;
+   font-size: 0.8rem;
+   font-weight: bold;
+   display: inline-block;
+}
+
+.sns__content > .content__list > li .sns-txt > span {
+   display: block;
+}
+
+.guide {
+   height: 800px;
+   background: gold;
+}
+
+.guide__content {
+   display: flex;
+   flex-direction: column;
+}
+
+.guide__content > div {
+   /* flex-direction이 column일때는 width가 100%, row일때는 1:1 비율 */
+   flex: 1;
+   text-align: center;
+}
+
+.guide__content > .content__app {
+   background-color: #c7a086;
+   background-image: url('../images/app.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.guide__content > .content__delivery {
+   background-color: #b38567;
+   background-image: url('../images/delivery.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.store {
+   height: 370px;
+}
+
+.store__content {
+   background: white;
+}
+
+.store__content > .search {
+   padding: 50px 5px;
+}
+
+.store__content > .search .button {
+   border-radius: 30px;
+   margin-top: 15px;
+   font-size: 1rem;
+}
+
+.store__content > .search > h2,
+.store__content > .search > p {
+   text-align: center;
+}
+
+.store__content > .search > h2 {
+   font-size: 2rem;
+}
+
+.store__content > .search > p:nth-of-type(1) {
+   font-size: 1.5rem;
+}
+
+.store__content > .search > p:nth-of-type(2) {
+   margin-bottom: 30px;
+}
+
+.store__content ul {
+   overflow: hidden;
+   width: 79.44%; /* (1144px/1440px) * 100 */
+   margin: 0 auto;
+}
+
+.store__content ul li {
+   float: left; /* 수평정렬 */
+   width: 33.33%; /* 화면이 767px 아래로 떨어졌을때 <li> 태그를 2행으로 만든다 (100/3) */
+   text-align: center;
+}
+
+.store__content ul li > img {
+   display: block;
+   width: 60px;
+   margin: 0 auto;
+}
+
+.store__content ul li > .search-txt {
+   display: none;
+}
+
+.store__content ul li > em {
+   color: red;
+}
+
+.banner {
+   height: 200px;
+}
+
+.banner__content {
+   background-image: url('../images/bg_home_cs.png');
+   background-size: cover;
+   background-position: center;
+   color: white;
+   display: flex;
+   flex-direction: column;
+}
+
+.banner__content > .order-txt {
+   padding: 40px 30px 10px;
+}
+
+.banner__content > .phone {
+   font-size: 2.5rem;
+   padding-left: 30px;
+}
+
+@media all and (min-width: 767px) {
+   .sns__content > .content__list > li > a {
+      flex-direction: row;
+      align-items: center;
+   }
+
+   .sns__content > .content__list > li .icon {
+      font-size: 5rem;
+      padding-right: 10px;
+   }
+
+   .sns__content > .content__list > li .sns-txt {
+      text-align: left;
+   }
+
+   .guide {
+      height: 380px;
+   }
+
+   .guide__content {
+      flex-direction: row;
+   }
+
+   .slider__content .carousel-item.slide1 {
+      background: url('../images/slide1.png');
+      background-position: center;
+      background-size: cover;
+      height: 480px;
+   }
+
+   .slider__content .carousel-item.slide2 {
+      background: url('../images/slide2.png');
+      background-position: center;
+      background-size: cover;
+      height: 480px;
+   }
+
+   .slider__content .carousel-item.slide3 {
+      background: url('../images/slide3.png');
+      background-position: center;
+      background-size: cover;
+      height: 480px;
+   }
+
+   .store {
+      height: 597px;
+   }
+
+   .store__content > .search {
+      padding: 140px 5px;
+   }
+
+   .store__content > .search > h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+   }
+
+   .store__content ul li {
+      width: 16.66%; /* 화면이 767px보다 커지면 <li> 태그를를 1행으로 만든다 (100/6) */
+      border-right: 1px solid rgb(209, 209, 209);
+   }
+
+   .store__content ul li:last-of-type {
+      border-right: none;
+   }
+
+   .store__content ul li > img {
+      width: 90px;
+   }
+
+   .store__content ul li > .search-txt {
+      display: block;
+      margin: 15px 0;
+   }
+   .store__content ul li > em {
+      font-size: 1.4rem;
+   }
+
+   .banner__content {
+      flex-direction: row;
+      align-items: center;
+   }
+
+   .banner__content > .order-txt {
+      width: 54.16%; /* (780px / 1440px) x 100 */
+      margin-left: 3.47%; /* (50px / 1440px) x 100 */
+      padding: 0;
+   }
+
+   .banner__content > .phone {
+      width: 38.88%; /* (560px / 1440px) x 100 */
+      margin-right: 3.47%; /* (50px / 1440px) x 100 */
+      text-align: center;
+   }
+
+   .banner__content > .order-txt > h1 {
+      font-size: 2.3rem;
+   }
+
+   .banner__content > .order-txt > p {
+      font-size: 1.3rem;
+      display: inline;
+   }
+
+   .banner__content > .order-txt > p:nth-of-type(2)::before {
+      content: '/ ';
+   }
+}
+
+@media all and (min-width: 1024px) {
+}

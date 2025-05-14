@@ -1,0 +1,444 @@
+@charset "uft-8";
+
+/* common.css => 모든 html 페이지에 공통으로 적용되는 css */
+/* reset.css 삽입 */
+@import url('./reset.css');
+
+/* 보통 header와 footer */
+
+.header {
+   height: 120px;
+}
+
+header .media {
+   display: none;
+}
+
+header nav:last-child {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: white;
+   z-index: 9997;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   width: 100%;
+}
+
+.header #con-right {
+   float: right;
+   height: 100%;
+   margin-left: 50px;
+}
+
+.nav-container {
+   height: 60px;
+   margin: 0 auto;
+   max-width: 1140px;
+   display: flex;
+   align-items: flex-end;
+   justify-content: space-between;
+}
+
+#con-top > :nth-child(2) {
+   display: flex;
+   align-items: center;
+   padding-right: 50px;
+   position: relative;
+}
+
+#con-top > :nth-child(2) a {
+   padding: 0 10px;
+   font-size: 15px;
+   color: #666666;
+}
+
+#con-top > :nth-child(2) a:last-of-type {
+   padding-right: 30px;
+}
+
+#con-top > :nth-child(2) a::before {
+   content: '';
+   position: absolute;
+   top: 13px;
+   padding: 5px 1px;
+   background: #888888;
+   margin: 0 -10px;
+}
+
+#con-top > :nth-child(2) a:first-of-type:before {
+   padding: 0;
+}
+
+.nav-container .nav__menu {
+   display: flex;
+   width: 900px;
+   justify-content: space-around;
+   margin-left: 21%;
+}
+
+.nav__menu li {
+   text-align: center;
+   padding-bottom: 20px;
+   position: relative;
+}
+
+#con-bottom .submenu {
+   display: none;
+}
+
+#con-bottom .nav__menu div {
+   display: none;
+   height: 250px;
+   width: 100%;
+}
+
+#con-bottom .nav__menu:hover > div {
+   display: block;
+   background-color: #fff;
+   position: absolute;
+   top: 80px;
+   left: 0;
+   width: 100%;
+   height: 300px;
+}
+
+#con-bottom .nav__menu:hover .submenu {
+   display: block;
+   position: absolute;
+   top: 50px;
+   width: 100%;
+   background-color: #fff;
+}
+
+.nav__menu .submenu a {
+   color: #555;
+   font-size: 13px;
+}
+
+/* From Uiverse.io by WhiteNervosa */
+.nav__menu li button {
+   font-size: 18px;
+   color: #000;
+   font-weight: bold;
+   cursor: pointer;
+   position: relative;
+   border: none;
+   background: none;
+   text-transform: uppercase;
+   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+   transition-duration: 400ms;
+   transition-property: color;
+}
+
+.nav__menu li button:focus:after,
+.nav__menu li button:hover:after {
+   width: 100%;
+   left: 0%;
+}
+
+.nav__menu li button:after {
+   content: '';
+   pointer-events: none;
+   bottom: -10px;
+   left: 50%;
+   position: absolute;
+   width: 0%;
+   height: 1px;
+   background-color: #000;
+   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+   transition-duration: 400ms;
+   transition-property: width, left;
+}
+
+/* 푸터 */
+
+.footer__level1 {
+   max-width: 1280px;
+   margin: 0 auto;
+}
+
+.footer__level1 .menu-list {
+   display: flex;
+   justify-content: space-between;
+   padding: 50px 0 80px 0;
+}
+.footer__level1 .menu-list > li > a > p {
+   font-weight: bold;
+   font-size: 15px;
+   padding-bottom: 15px;
+}
+
+.footer__level1 .menu-list li {
+   padding-bottom: 5px;
+   font-size: 12px;
+}
+
+.footer__level1 .menu-list li > ul p {
+   color: #888888;
+}
+
+.footer__level2 {
+   text-align: center;
+}
+
+.footer__level2 .pm {
+   height: 45px;
+   background: #282828;
+}
+
+.footer__level2 .private-line ul {
+   display: flex;
+   font-size: 14px;
+   justify-content: center;
+}
+
+.private-line .line-txt {
+   padding: 0;
+   position: relative;
+}
+
+.private-line .line-txt a {
+   color: #888888;
+   padding: 0 10px;
+}
+
+.private-line .line-txt:first-of-type a {
+   border: none;
+   color: #deac55;
+}
+
+.private-line .line-txt:not(:last-child) a::after {
+   content: '';
+   position: absolute;
+   padding: 8px 1px;
+   background-color: #888888;
+   display: inline-block;
+   margin: 0 10px;
+}
+
+.footer__level2 .info {
+   background: #202020;
+   height: 250px;
+   padding: 25px 0 70px;
+}
+
+.footer__level2 .address-line p {
+   color: #666666;
+   font-size: 12px;
+   padding-bottom: 5px;
+}
+
+.footer__level2 .address-line p:first-child {
+   padding-top: 40px;
+}
+
+.footer__level2 .address-line p:last-child {
+   padding-top: 30px;
+}
+
+@media all and (min-width: 500px) and (max-width: 876px) {
+   .header {
+      height: 70px;
+      position: relative;
+   }
+
+   header .media {
+      display: inline-block;
+   }
+
+   header .media .logo {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 50%);
+   }
+
+   header .media .logo img {
+      width: 60px;
+   }
+
+   #toggle-menu {
+      display: none;
+   }
+
+   header .media .menu-toggle-label {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 9998;
+      position: absolute;
+      transform: translateY(50%);
+   }
+
+   header .media .menu-toggle-label span {
+      height: 2.5px;
+      width: 25px;
+      background: red;
+      margin: 4px 0 0 10px;
+      border-radius: 5px;
+   }
+
+   header .media .menu {
+      display: none;
+      flex-direction: column;
+      background-color: white;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      border-top: 1px solid #ccc;
+      z-index: 9998;
+   }
+
+   /* 햄버거 버튼을 클릭(체크)했을때 ul메뉴를 보여준다 */
+   #toggle-menu:checked + .menu-toggle-label + .menu {
+      display: flex;
+   }
+
+   header .media .menu > li {
+      border-top: 1px solid #555;
+      position: relative;
+      font-size: 1.1rem;
+      background: #202020;
+   }
+
+   header .media .menu > li > a {
+      display: block;
+      padding: 20px 20px;
+      color: white;
+      background: #282828;
+      font-weight: bold;
+      position: relative;
+   }
+
+   header .media .menu #login {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+   }
+
+   header .media .menu #login button:first-child {
+      border: 1px solid #deac55;
+      border-radius: 20px;
+      background: transparent;
+      color: #deac55;
+      padding: 10px 100px;
+   }
+
+   header .media .menu #login input {
+      display: none;
+   }
+
+   header .media #login label {
+      display: flex;
+      cursor: pointer;
+      z-index: 9998;
+      position: absolute;
+      transform: translate(450px, 10px);
+   }
+
+   header .media #login label i {
+      color: #deac55;
+   }
+
+   header .media .menu #deliy-order {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+   }
+
+   header .media .menu #deliy-order button {
+      border: 1px solid #555;
+      border-radius: 20px;
+      background: #55555528;
+      color: #555;
+      padding: 10px 80px;
+   }
+
+   header .media .submenu {
+      display: none;
+   }
+
+   header .media .submenu li a {
+      display: block;
+      padding: 15px 20px;
+      color: #fff;
+      background: #555;
+      font-size: 15px;
+   }
+
+   header .media .menu > li:hover .submenu {
+      display: block;
+   }
+
+   header .media .menu > li i {
+      position: absolute;
+      right: 15px;
+   }
+
+   header .media .menu > li:hover > a > i {
+      transform: rotate(-180deg);
+      transition: 0.5s ease-in-out;
+   }
+
+   nav {
+      display: none;
+   }
+
+   .header #con-right {
+      float: right;
+      height: 100%;
+      margin-left: 50px;
+   }
+
+   .nav-container {
+      height: 60px;
+      margin: 0 auto;
+      max-width: 1140px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+   }
+
+   .footer__level1 {
+      display: none;
+   }
+
+   .footer__level2 .private-line ul {
+      display: block;
+   }
+
+   .footer__level2 .private-line li {
+      display: inline-block;
+      margin-bottom: 10px;
+   }
+
+   footer .media {
+      background-color: #fff;
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      z-index: 9997;
+      bottom: 0;
+      left: 0;
+   }
+
+   footer .media ul {
+      display: flex;
+   }
+
+   footer .media li {
+      flex: 1;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 13px;
+   }
+
+   footer .media li a {
+      color: #555;
+   }
+
+   footer .media li i {
+      display: block;
+      padding-bottom: 5px;
+   }
+}
